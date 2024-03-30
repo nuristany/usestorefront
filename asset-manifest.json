@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/usestorefront/static/css/main.9638f943.css",
+    "main.js": "/usestorefront/static/js/main.6d4a3021.js",
+    "static/media/ibuy.png": "/usestorefront/static/media/ibuy.9b79a85c9aeec64ea857.png",
+    "index.html": "/usestorefront/index.html",
+    "main.9638f943.css.map": "/usestorefront/static/css/main.9638f943.css.map",
+    "main.6d4a3021.js.map": "/usestorefront/static/js/main.6d4a3021.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9638f943.css",
+    "static/js/main.6d4a3021.js"
+  ]
+}
