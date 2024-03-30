@@ -32,6 +32,7 @@ const ItemDetailPage = () => {
 
   return (
     <section style={{ marginTop: "40px", marginLeft: "60px" }}>
+      {error && <p>Error: {error}</p>} {/* Display the error message if it exists */}
       <div className="row">
         {item && (
           <div className="col-lg-5 col-md-12 col-12">
@@ -59,21 +60,4 @@ const ItemDetailPage = () => {
 
 export default ItemDetailPage;
 
-// <div className="detail-page">
-//   {item && (
-//     <div className="item-details">
-//       <div className="item-images">
-//         {item.images.map((image, index) => (
-//           <img key={index} src={image.image} alt={`Item ${index + 1}`} />
-//         ))}
-//       </div>
-//       <div>
-//         <h3>Title: {item.title}</h3>
-//         <h3>Price: {item.price}</h3>
-//         <h3>Seller: {item.seller_full_name}</h3>
-//         <h3>Contact Number: {item.contact_number}</h3>
-//       </div>
-//     </div>
-//   )}
-//   {error && <p className="error-message">{error}</p>}
-// </div>
+

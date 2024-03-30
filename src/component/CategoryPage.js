@@ -59,6 +59,7 @@ const CategoryPage = () => {
       );
 
       navigate(`/category-items/${categoryId}`);
+      console.log(response)
     } catch (error) {
       console.error(`Error fetching items for category ${categoryId}:`, error);
     }

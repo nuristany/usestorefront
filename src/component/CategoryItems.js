@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"; // Import useParams
 import { useNavigate } from "react-router-dom";
 const CategoryItems = () => {
   const { categoryId } = useParams(); // Get categoryId from URL params
-  const [categoryName, setCategoryName] = useState("");
+  //const [categoryName, setCategoryName] = useState("");
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
