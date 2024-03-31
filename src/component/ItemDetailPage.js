@@ -49,7 +49,7 @@ const ItemDetailPage = () => {
         <div className="detail-detail">
           <h3>Title: {item && item.title}</h3>
           <h3>Price: ${item && item.price}</h3>
-          <h3>Contact Number: {item && item.contact_number}</h3>
+          <h3>Contact Number: {item && item.phone}</h3>
           <h3>Seller: {item && item.seller_full_name}</h3>
           <p><strong>Description:</strong>{item && item.description}</p>
         </div>
