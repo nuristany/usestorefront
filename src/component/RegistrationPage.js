@@ -149,7 +149,7 @@ function RegistrationForm() {
         throw new Error(data.detail || "Failed to register user");
       }
       // Registration successful
-      navigate("/");
+      navigate("/login");
       console.log("User registered successfully");
     } catch (error) {
       console.error("Error registering user:", error.message);
