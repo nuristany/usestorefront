@@ -392,11 +392,13 @@ footer {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
+  
 }
 
 .footer-col {
   flex-basis: 25%;
   padding: 10px;
+  
 }
 .footer-col h3 {
   width: fit-content;
@@ -487,6 +489,7 @@ footer ul li a {
     flex-direction: column; /* Stack footer columns in a column */
     align-items: center; /* Center align footer content */
     text-align: center; /* Center align text */
+    height: 100px;
   }
 
   .footer-col {
