@@ -437,3 +437,60 @@ footer ul li a {
   background-color: #a9a4a4;
   color: white;
 }
+
+
+
+/* Existing styles here */
+
+/* Add media query for mobile devices */
+@media only screen and (max-width: 600px) {
+  /* Adjust navbar styles for mobile */
+  .nav input {
+    width: 50%;
+    margin-left: 20px; /* Adjust margin for smaller screens */
+  }
+  
+  .logo {
+    padding: 0 20px; /* Adjust padding for smaller screens */
+  }
+  
+  .nav ul {
+    margin-right: 10px; /* Adjust margin for smaller screens */
+  }
+
+  /* Adjust card styles for mobile */
+  .card {
+    width: 100%; /* Take full width on smaller screens */
+    margin: 10px 0; /* Adjust margin for smaller screens */
+  }
+  
+  .card img {
+    width: 100%; /* Make images full width on smaller screens */
+    height: auto; /* Auto height to maintain aspect ratio */
+  }
+
+  /* Adjust login/signup form styles for mobile */
+  .user-login, .signup {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+
+  form {
+    margin: 20px; /* Adjust margin for smaller screens */
+  }
+
+  form input, form button {
+    width: 100%; /* Make form inputs and buttons full width */
+  }
+
+  /* Adjust footer styles for mobile */
+  .footer-row {
+    flex-direction: column; /* Stack footer columns in a column */
+    align-items: center; /* Center align footer content */
+    text-align: center; /* Center align text */
+  }
+
+  .footer-col {
+    flex-basis: 100%; /* Take full width on smaller screens */
+    margin-bottom: 20px; /* Adjust margin for smaller screens */
+  }
+}
