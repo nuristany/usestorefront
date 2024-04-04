@@ -12,6 +12,7 @@ import "./styles.css"
 import CategoryItems from "./component/CategoryItems";
 import ItemDetailPage from './component/ItemDetailPage';
 import AboutPage from "./component/AboutPage";
+import CreateItemPage from "./component/CreateItemPage";
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +24,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/create" element={<CreateItemPage />} />
             <Route path="/category-items/:categoryId" element={<CategoryItems />} /> {/* Add this route */}
             <Route path="/item-details/:itemId" element={<ItemDetailPage />} /> {/* Add this route */}
             

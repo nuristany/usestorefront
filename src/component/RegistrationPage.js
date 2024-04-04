@@ -137,7 +137,8 @@ function RegistrationForm() {
     }
 
     try {
-      const response = await fetch("https://web-production-036f.up.railway.app/auth/users/", {
+      //const accessToken = localStorage.getItem("access");
+      const response = await fetch("http://127.0.0.1:8000/auth/users/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -441,6 +441,56 @@ footer ul li a {
 }
 
 
+.add-item-container {
+  max-width: 600px;
+  margin:auto
+}
+
+.create-form {
+  background-color: #303030;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #eaeff2;
+}
+
+.create-form input[type="text"],
+.create-form textarea,
+.create-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.create-form input[type="file"] {
+  margin-top: 5px;
+}
+
+.create-form button {
+  background-color: #060606;
+  color: #278fc0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-form button:hover {
+  background-color:#043033;
+}
+
+
+
+
+
 
 /* Existing styles here */
 

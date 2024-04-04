@@ -38,13 +38,20 @@ const Navbar = () => {
       </Link>
       <ul className="nav-ul">
         {isLoggedIn ? (
-          <li className="nav-li">
-            <Link to="/logout">Logout</Link>
-          </li>
+          <div>
+            <li className="nav-li">
+              <Link to="/create">Create</Link>
+            </li>
+            <li className="nav-li">
+              <Link to="/logout">Logout</Link>
+            </li>
+          </div>
         ) : (
           <>
             <li>
-              <Link to="/login" ><button>Login</button></Link>
+              <Link to="/login">
+                <button>Login</button>
+              </Link>
             </li>
           </>
         )}
