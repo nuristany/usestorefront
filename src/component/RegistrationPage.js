@@ -103,9 +103,14 @@
 
 // export default RegistrationForm;
 
-
-
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faPhone,
+  faEnvelope,
+  faLock,
+} from "@fortawesome/free-solid-svg-icons"; // Import the user icon
 import { useNavigate } from "react-router-dom";
 
 function RegistrationForm() {
@@ -138,7 +143,7 @@ function RegistrationForm() {
 
     try {
       //const accessToken = localStorage.getItem("access");
-      const response = await fetch("http://127.0.0.1:8000/auth/users/", {
+      const response = await fetch("https://web-production-036f.up.railway.app/auth/users/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -159,67 +164,105 @@ function RegistrationForm() {
   };
 
   return (
-    <div className="signup-container">
-      <div className="signup">
-        <form onSubmit={handleSubmit} className="signupForm">
+    <div className="registration-container">
+      <div className="wrapper">
+        <h1>Registration</h1>
+        <form onSubmit={handleSubmit}>
           {error && <div className="error">{error}</div>}
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            name="first_name"
-            placeholder="First Name"
-            value={formData.first_name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            name="last_name"
-            placeholder="Last Name"
-            value={formData.last_name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm Password"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            name="phone"
-            placeholder="Contact Number"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
-          <button type="submit">Sign Up</button>
+          <div className="input-box">
+            <div className="input-field">
+              <input
+                type="text"
+                placeholder="Username"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+                required
+              />
+              <FontAwesomeIcon icon={faUser} className="faUser" />
+            </div>
+            <div className="input-field">
+              <input
+                type="text"
+                name="first_name"
+                placeholder="First Name"
+                value={formData.first_name}
+                onChange={handleChange}
+                required
+              />
+              <FontAwesomeIcon icon={faUser} className="faUser" />
+            </div>
+          </div>
+          <div className="input-box">
+            <div className="input-field">
+              <input
+                type="text"
+                placeholder="Last Name"
+                name="last_name"
+                value={formData.last_name}
+                onChange={handleChange}
+                required
+              />
+              <FontAwesomeIcon icon={faUser} className="faUser" />
+            </div>
+            <div className="input-field">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <FontAwesomeIcon icon={faEnvelope} className="faUser" />
+            </div>
+          </div>
+          <div className="input-box">
+            <div className="input-field">
+              <input
+                type="number"
+                placeholder="Mobile Number"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+              />
+              <FontAwesomeIcon icon={faPhone} className="faUser" />
+            </div>
+            <div className="input-field">
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+              <FontAwesomeIcon icon={faLock} className="faUser" />
+            </div>
+          </div>
+          <div className="input-box">
+            <div className="input-field">
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                required
+              />
+              <FontAwesomeIcon icon={faLock} className="faUser" />
+            </div>
+          </div>
+          {/* Other input fields */}
+
+          <label>
+            <input type="checkbox" required /> I've read and accept the terms & condition
+          </label>
+
+          <button type="submit" className="btn">
+            Register
+          </button>
         </form>
       </div>
     </div>
@@ -227,3 +270,4 @@ function RegistrationForm() {
 }
 
 export default RegistrationForm;
+

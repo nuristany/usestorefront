@@ -61,7 +61,7 @@ body {
 
 /* this is the navbar style */
 .nav {
-  background: #060606;
+  background-color: rgb(84, 74, 72);
   height: 80px;
   width: 100%;
 }
@@ -155,40 +155,6 @@ form button {
   background-color: #0b0b0b;
 }
 
-.signup {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center; /* Horizontally center the content */
-  align-items: center; /* Vertically center the content */
-  height: 50vh; /* Set the height to the full viewport height */
-  width: 50vh;
-  background-color: #1e1e1d;
-  border-radius: 10px;
-}
-
-.signup-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.signup {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center; /* Horizontally center the content */
-  align-items: center; /* Vertically center the content */
-  height: 80vh; /* Set the height to the full viewport height */
-  width: 70vh;
-  background-color: #343333;
-  border-radius: 10px;
-}
-
-.signupForm input {
-  width: 300px;
-  margin-bottom: 5px;
-  height: 50px;
-}
-
 .col-2 ul {
   border-radius: 8px;
   width: 200px;
@@ -268,7 +234,7 @@ form button {
   text-align: center;
 }
 
-.nav ul li button{
+.nav ul li button {
   background-color: #dcdadc;
   color: #278fc0;
   border-radius: 5px;
@@ -281,13 +247,12 @@ form button {
   font-size: 15px;
   cursor: pointer;
 }
-.nav ul li button:hover{
+.nav ul li button:hover {
   background-color: #06565b;
   color: white;
-
 }
 
-.logout-container{
+.logout-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -301,12 +266,10 @@ form button {
   margin-top: 20px;
   border-radius: 5px;
   padding-top: 10px;
-  
 }
-.logout p{
-font-size: 20px;
-color: white;
-  
+.logout p {
+  font-size: 20px;
+  color: white;
 }
 .logout button {
   margin-top: 20px;
@@ -321,13 +284,11 @@ color: white;
   font-weight: bold;
   font-size: 15px;
   cursor: pointer;
-  
 }
 .login-link a {
   color: #431102;
   font-weight: bold;
   font-size: 20px;
-  
 }
 .login-link a:hover {
   color: white;
@@ -392,13 +353,11 @@ footer {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-  
 }
 
 .footer-col {
   flex-basis: 25%;
   padding: 10px;
-  
 }
 .footer-col h3 {
   width: fit-content;
@@ -440,10 +399,9 @@ footer ul li a {
   color: white;
 }
 
-
 .add-item-container {
   max-width: 600px;
-  margin:auto
+  margin: auto;
 }
 
 .create-form {
@@ -484,13 +442,8 @@ footer ul li a {
 }
 
 .create-form button:hover {
-  background-color:#043033;
+  background-color: #043033;
 }
-
-
-
-
-
 
 /* Existing styles here */
 
@@ -501,11 +454,11 @@ footer ul li a {
     width: 50%;
     margin-left: 20px; /* Adjust margin for smaller screens */
   }
-  
+
   .logo {
     padding: 0 20px; /* Adjust padding for smaller screens */
   }
-  
+
   .nav ul {
     margin-right: 10px; /* Adjust margin for smaller screens */
   }
@@ -515,14 +468,15 @@ footer ul li a {
     width: 100%; /* Take full width on smaller screens */
     margin: 10px 0; /* Adjust margin for smaller screens */
   }
-  
+
   .card img {
     width: 100%; /* Make images full width on smaller screens */
     height: auto; /* Auto height to maintain aspect ratio */
   }
 
   /* Adjust login/signup form styles for mobile */
-  .user-login, .signup {
+  .user-login,
+  .signup {
     width: 90%; /* Adjust width for smaller screens */
   }
 
@@ -530,7 +484,8 @@ footer ul li a {
     margin: 20px; /* Adjust margin for smaller screens */
   }
 
-  form input, form button {
+  form input,
+  form button {
     width: 100%; /* Make form inputs and buttons full width */
   }
 
@@ -545,5 +500,93 @@ footer ul li a {
   .footer-col {
     flex-basis: 100%; /* Take full width on smaller screens */
     margin-bottom: 20px; /* Adjust margin for smaller screens */
+  }
+}
+
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(217, 225, 225);
+}
+
+.wrapper {
+  width: 900px;
+  background-color: rgb(67, 63, 63);
+  border-radius: 10px;
+  color: white;
+  padding: 40px 35px 55px 44px;
+}
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wrapper .input-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+}
+
+.input-box .input-field {
+  position: relative;
+  width: 49%;
+  height: 50px;
+  margin: 11px 0;
+  background-color: rgb(84, 74, 72);
+  border-radius: 5px;
+}
+.input-box .input-field input {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  background-color: transparent;
+  border: 1px solid rgba(11, 181, 152, 0.2);
+  outline: none;
+  color: white;
+  border-radius: 6px;
+  padding: 20px 15px 15px 30px;
+}
+
+.input-box .input-field input::placeholder {
+  color: rgb(240, 236, 236);
+}
+
+.faUser {
+  position: absolute;
+  left: 15px;
+  top: 37%;
+  transform: translate(-50%);
+}
+
+.wrapper label {
+  display:flex;
+  font-size: 16px;
+  margin: 10px 0px 20px 0px;
+}
+.wrapper label input {
+  margin-top: 2px;
+  height: 15px;
+  width: 15px;
+  accent-color: white;
+  margin-right: 5px;
+}
+.wrapper .btn {
+  width: 100%;
+  min-height: 45px;
+  background-color: rgb(43, 62, 74);
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+@media (max-width: 576px) {
+  .input-box .input-field {
+    width: 100%;
+    margin: 10px;
   }
 }
