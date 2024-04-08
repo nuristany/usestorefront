@@ -298,16 +298,6 @@ form button {
   width: 300px;
 }
 
-.detail-detail {
-  margin-right: 20px;
-  background-color: #cde6f1;
-  border-radius: 5px;
-  padding: 15px;
-}
-.detail-detail p {
-  margin-top: 5px;
-}
-
 .buy-button button {
   background-color: #222324;
   padding-left: 10px;
@@ -528,7 +518,6 @@ footer ul li a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  
 }
 
 .input-box .input-field {
@@ -563,7 +552,7 @@ footer ul li a {
 }
 
 .wrapper label {
-  display:flex;
+  display: flex;
   font-size: 16px;
   margin: 10px 0px 20px 0px;
 }
@@ -588,5 +577,146 @@ footer ul li a {
   .input-box .input-field {
     width: 100%;
     margin: 10px;
+  }
+}
+
+.slider-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 450px;
+  padding: 20px;
+}
+
+.current-image {
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 7px #666;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+.arrow {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  color: rgb(223, 218, 218);
+  filter: drop-shadow(0px 0px 5px #555);
+}
+
+.arrow-left {
+  left: 1rem;
+}
+.arrow-right {
+  right: 1rem;
+}
+
+.circle-indicators {
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.current-indicator {
+  background-color: rgb(204, 204, 200);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  margin: 0 0.2rem;
+  cursor: pointer;
+}
+
+.hide-current-image {
+  display: none;
+}
+.inactive-indicator {
+  background-color: grey;
+}
+
+
+
+
+.item-detail {
+  padding: 20px;
+}
+
+.item-title {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  position: relative;
+  color: #12263a;
+  margin: 1rem 0;
+  padding-bottom: 7px;
+}
+
+.item-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 110px;
+  background: #47627e;
+}
+
+.item-detail-container {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.right-container {
+  
+  width: 100%;
+  height: 100vh;
+  border: 2px solid rgb(216, 209, 209);
+  background-color: rgb(236, 236, 236);
+  border-radius: 5px;
+  
+  
+}
+.left-container {
+  border-radius: 5px;
+  width: 100%;
+  height: 100vh;
+  border: 2px solid rgb(216, 209, 209);
+  background-color: rgb(236, 236, 236);
+}
+
+
+.item-detail-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .item-detail-container {
+    flex-direction: row;
+  }
+  
+  .left-container {
+    flex: 1; /* Take up remaining space */
+    margin-right: 20px; /* Add space between left and right containers */
+  }
+
+  .right-container {
+    flex: 1; /* Take up remaining space */
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-container {
+    width: 100%; /* Make slider full width */
+    margin: 10px 0; /* Adjust margin for smaller screens */
+  }
+
+  .right-container, .left-container {
+    width: 100%; /* Make both containers full width */
+    margin: 0; /* Remove margin */
   }
 }

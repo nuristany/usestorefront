@@ -1,11 +1,15 @@
+
+
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import axios from "axios";
 
 const ItemDetailPage = () => {
   const { itemId } = useParams();
-  const [item, setItem] = useState(null); // Initialize item state to null
-  const [error, setError] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [item, setItem] = useState(null);
+  const [error, setError] = useState(null); // Include error state
 
   useEffect(() => {
     const fetchItem = async () => {
@@ -20,108 +24,87 @@ const ItemDetailPage = () => {
           }
         );
         console.log(response.data);
-        setItem(response.data); // Set item state with the fetched data
+        setItem(response.data);
       } catch (error) {
         setError("Failed to fetch item");
         console.error("Error fetching item:", error.message);
       }
     };
 
-    fetchItem(); // Call fetchItem when the component mounts
-  }, [itemId]); // Include itemId in the dependency array
+    fetchItem();
+  }, [itemId]);
+
+  function handlePrevious() {
+    setCurrentSlide(
+      currentSlide === 0 ? item.images.length - 1 : currentSlide - 1
+    );
+  }
+
+  function handleNext() {
+    setCurrentSlide(
+      currentSlide === item.images.length - 1 ? 0 : currentSlide + 1
+    );
+  }
 
   return (
-    <section style={{ marginTop: "40px", marginLeft: "60px" }}>
-      {error && <p>Error: {error}</p>} {/* Display the error message if it exists */}
-      <div className="row">
-        {item && (
-          <div className="col-lg-5 col-md-12 col-12">
-            {item.images.map((image, index) => (
-              <img
+    <div className="item-detail-container">
+      {error && <div>Error: {error}</div>} {/* Render error message if error exists */}
+      <div className="right-container">
+        <div className="slider-container">
+          <BsArrowLeftCircleFill
+            onClick={handlePrevious}
+            className="arrow arrow-left"
+          />
+          {item?.images?.map((image, index) => (
+            <img
+              key={index}
+              src={image.image}
+              alt={`Item ${index + 1}`}
+              className={
+                currentSlide === index
+                  ? "current-image"
+                  : "current-image hide-current-image"
+              }
+            />
+          ))}
+          <BsArrowRightCircleFill
+            onClick={handleNext}
+            className="arrow arrow-right"
+          />
+          <span className="circle-indicators">
+            {item?.images?.map((_, index) => (
+              <button
                 key={index}
-                src={image.image}
-                alt={`Item ${index + 1}`}
-                className="small-img"
-              />
+                className={
+                  currentSlide === index
+                    ? "current-indicator"
+                    : "current-indicator inactive-indicator"
+                }
+                onClick={() => setCurrentSlide(index)}
+              ></button>
             ))}
-          </div>
-        )}
-        <div className="detail-detail">
-          <h3>Title: {item && item.title}</h3>
-          <h3>Price: ${item && item.price}</h3>
-          <h3>Contact Number: {item && item.phone}</h3>
-          <h3>Seller: {item && item.seller_full_name}</h3>
-          <p><strong>Description:</strong>{item && item.description}</p>
+          </span>
         </div>
       </div>
-    </section>
+      <div className="left-container">
+        {item && (
+          <div className="item-detail">
+            <h1 className="item-title">{item.title}</h1>
+            <h4>Price: {item.price}</h4>
+            <h4>Contact: {item.phone}</h4>
+            <h4>Seller: {item.seller_full_name}</h4>
+            <br />
+            <hr />
+            <p>
+              <strong>Description</strong>: {item.description}
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
   );
 };
 
 export default ItemDetailPage;
-
-
-
-// import React, { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
-// import axios from "axios";
-
-// const ItemDetailPage = () => {
-//   const { itemId } = useParams();
-//   const [item, setItem] = useState(null); // Initialize item state to null
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     const fetchItem = async () => {
-//       try {
-//         const accessToken = localStorage.getItem("access");
-//         const response = await axios.get(
-//           `http://127.0.0.1:8000/store/items/${itemId}`,
-//           {
-//             headers: {
-//               Authorization: `JWT ${accessToken}`,
-//             },
-//           }
-//         );
-//         console.log(response.data);
-//         setItem(response.data); // Set item state with the fetched data
-//       } catch (error) {
-//         setError("Failed to fetch item");
-//         console.error("Error fetching item:", error.message);
-//       }
-//     };
-
-//     fetchItem(); // Call fetchItem when the component mounts
-//   }, [itemId]); // Include itemId in the dependency array
-
-//   return (
-//     <section style={{ marginTop: "40px", marginLeft: "60px" }}>
-//       {error && <p>Error: {error}</p>} {/* Display the error message if it exists */}
-//       <div className="row">
-//         {item && (
-//           <div className="col-lg-5 col-md-12 col-12">
-//             {item.images.map((image, index) => (
-//               <img
-//                 key={index}
-//                 src={image.image}
-//                 alt={`Item ${index + 1}`}
-//                 className="small-img"
-//               />
-//             ))}
-//           </div>
-//         )}
-//         <div className="detail-detail">
-//           <h3>Title: {item && item.title}</h3>
-//           <h3>Price: ${item && item.price}</h3>
-//           <h3>Contact Number: {item && item.phone}</h3>
-//           <h3>Seller: {item && item.seller_full_name}</h3>
-//           <p><strong>Description:</strong>{item && item.description}</p>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default ItemDetailPage;
 
 
