@@ -13,6 +13,7 @@ import CategoryItems from "./component/CategoryItems";
 import ItemDetailPage from './component/ItemDetailPage';
 import AboutPage from "./component/AboutPage";
 import CreateItemPage from "./component/CreateItemPage";
+import HumbergurMenu from "./component/HumbergurMenu";
 function App() {
   return (
     <BrowserRouter>
@@ -27,6 +28,7 @@ function App() {
             <Route path="/create" element={<CreateItemPage />} />
             <Route path="/category-items/:categoryId" element={<CategoryItems />} /> {/* Add this route */}
             <Route path="/item-details/:itemId" element={<ItemDetailPage />} /> {/* Add this route */}
+            <Route path="/humberger" element={<HumbergurMenu />} /> {/* Add this route */}
             
           </Route>
         </Routes>

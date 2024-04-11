@@ -1,13 +1,82 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: montserrt;
+  
+}
+/* this is the navbar style */
+
+
+
+
+
+.navbar {
+  
+  background: white;
+  border: 1px solid rgb(219, 211, 211);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  line-height: 80px;
+  margin-bottom: 0px;
+}
+
+.nav-logo img {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.nav-items ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-items ul {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-right: 20px;
+  text-transform: capitalize;
+  color: black;
+  font-size: 20px;
+}
+
+.nav-items img {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-container ul {
+    margin-left: 0;
+  }
+
+  .nav-logo img {
+    margin-left: 10;
+  }
+
+  .nav-items ul {
+    margin-right: 10;
+  }
 }
 
 .main {
@@ -35,13 +104,12 @@ body {
   background-color: #f0f0f0;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
   margin: 10px;
 }
 
 .card img {
-  width: 200px;
-  height: 200px;
+  width: 100%;
 }
 
 .card-content {
@@ -59,86 +127,77 @@ body {
   line-height: 1.3;
 }
 
-/* this is the navbar style */
-.nav {
-  background-color: rgb(84, 74, 72);
-  height: 80px;
-  width: 100%;
-}
-
-.nav input {
-  width: 25%;
-  height: 37px;
-  border: none;
-  border-radius: 5px;
-  position: absolute;
-  margin-top: 20px;
-  margin-left: 190px;
-  padding-left: 5px;
-}
-
-.logo {
-  color: #726962;
-  font-size: 45px;
-  line-height: 80px;
-  padding: 0 100px;
-  font-weight: bold;
-  text-decoration: none;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-.logo img {
-  width: 100px;
-}
-
-.nav ul {
-  float: right;
-  margin-right: 20px;
-}
-
-.nav ul li {
-  display: inline-block;
-  line-height: 80px;
-  margin: 0 5px;
-}
-
-.nav ul li a {
-  color: #278fc0;
-  font-size: 17px;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.nav ul li a:hover {
-  color: rgb(98, 205, 232);
-}
-
 /* this is the login style starts from here */
 
+/* Styles for large screens */
 .user-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  width: 100%;
 }
+
 .user-login {
+  border: 1px solid rgb(199, 191, 191);
   margin-top: 20px;
   display: flex;
-  justify-content: center; /* Horizontally center the content */
-  align-items: center; /* Vertically center the content */
-  height: 50vh; /* Set the height to the full viewport height */
-  width: 50vh;
-  background-color: #494949;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 50%; /* Adjust as needed */
+  background: white;
   border-radius: 10px;
 }
+
+.login-link {
+  margin-top: 15px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.login-link-create {
+  margin-top: 10px;
+}
+
+.login-link-create a {
+  margin-top: 5px;
+  background: white;
+  border: 1px solid rgb(80, 177, 212);
+  padding: 5px 50px; /* Adjust padding as needed */
+  border-radius: 5px;
+  font-size: 26px;
+  font-weight: lighter;
+  width: 120px;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+  .user-login {
+    width: 90%;
+    height: 50%;
+    max-width: 400px; /* Adjust as needed */
+    
+  }
+
+  .login-link p {
+    width: auto;
+  }
+}
+
+
+
 form {
   margin: 50px;
 }
 form input {
   height: 50px;
-  width: 200px;
+  width: 300px;
   border-radius: 5px;
-  border: 2px solid rgb(133, 214, 236);
+  border: 1px solid rgb(133, 214, 236);
   margin-bottom: 3px;
   display: block;
   padding-left: 5px;
@@ -229,28 +288,7 @@ form button {
   width: 300px;
 }
 
-.login-link p {
-  width: 180px;
-  text-align: center;
-}
 
-.nav ul li button {
-  background-color: #dcdadc;
-  color: #278fc0;
-  border-radius: 5px;
-  border: none;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-weight: bold;
-  font-size: 15px;
-  cursor: pointer;
-}
-.nav ul li button:hover {
-  background-color: #06565b;
-  color: white;
-}
 
 .logout-container {
   display: flex;
@@ -286,8 +324,8 @@ form button {
   cursor: pointer;
 }
 .login-link a {
-  color: #431102;
-  font-weight: bold;
+  color: rgb(80, 177, 212);
+  font-weight:lighter;
   font-size: 20px;
 }
 .login-link a:hover {
@@ -337,7 +375,7 @@ footer {
 }
 
 .footer-row {
-  width: 85%;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -358,6 +396,8 @@ footer {
 .footer-logo {
   width: 110px;
   height: 50px;
+  padding-left: 10px;
+  margin-left: 20px;
 }
 
 footer ul li a {
@@ -369,7 +409,6 @@ footer ul li a {
   display: flex;
   justify-content: space-between;
   gap: 3px;
-  padding: 10px;
 }
 
 .facebook {
@@ -382,11 +421,15 @@ footer ul li a {
 }
 
 .login-button {
-  background-color: #060606;
-}
-.login-button:hover {
-  background-color: #a9a4a4;
   color: white;
+  background: #0079c1;
+  font-weight: lighter;
+  border: 1px solid rgb(188, 227, 233);
+}
+
+.login-button:hover {
+  background: rgb(149, 205, 215);
+  color: rgb(2, 30, 187);
 }
 
 .add-item-container {
@@ -498,18 +541,21 @@ footer ul li a {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: rgb(217, 225, 225);
+  background:white
 }
 
 .wrapper {
   width: 900px;
-  background-color: rgb(67, 63, 63);
+  background:white;
+  border: 1px solid rgb(209, 197, 197);
   border-radius: 10px;
-  color: white;
+  color:black;
   padding: 40px 35px 55px 44px;
 }
-.wrapper h1 {
-  font-size: 36px;
+.wrapper h4 {
+  font-size: 26px;
+  font-weight: lighter;
+  color: black;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -525,7 +571,7 @@ footer ul li a {
   width: 49%;
   height: 50px;
   margin: 11px 0;
-  background-color: rgb(84, 74, 72);
+  background:white;
   border-radius: 5px;
 }
 .input-box .input-field input {
@@ -535,13 +581,13 @@ footer ul li a {
   background-color: transparent;
   border: 1px solid rgba(11, 181, 152, 0.2);
   outline: none;
-  color: white;
+  color: black;
   border-radius: 6px;
   padding: 20px 15px 15px 30px;
 }
 
 .input-box .input-field input::placeholder {
-  color: rgb(240, 236, 236);
+  color: black;
 }
 
 .faUser {
@@ -566,11 +612,12 @@ footer ul li a {
 .wrapper .btn {
   width: 100%;
   min-height: 45px;
-  background-color: rgb(43, 62, 74);
-  color: white;
+  background:white;
+  color: rgb(88, 179, 204);
   font-size: 20px;
-  border: none;
+  border: 1px solid rgb(210, 201, 201);
   border-radius: 5px;
+  font-weight: lighter;
 }
 
 @media (max-width: 576px) {
@@ -636,9 +683,6 @@ footer ul li a {
   background-color: grey;
 }
 
-
-
-
 .item-detail {
   padding: 20px;
 }
@@ -671,14 +715,11 @@ footer ul li a {
 }
 
 .right-container {
-  
   width: 100%;
   height: 100vh;
   border: 2px solid rgb(216, 209, 209);
   background-color: rgb(236, 236, 236);
   border-radius: 5px;
-  
-  
 }
 .left-container {
   border-radius: 5px;
@@ -687,7 +728,6 @@ footer ul li a {
   border: 2px solid rgb(216, 209, 209);
   background-color: rgb(236, 236, 236);
 }
-
 
 .item-detail-container {
   display: flex;
@@ -698,7 +738,7 @@ footer ul li a {
   .item-detail-container {
     flex-direction: row;
   }
-  
+
   .left-container {
     flex: 1; /* Take up remaining space */
     margin-right: 20px; /* Add space between left and right containers */
@@ -715,8 +755,28 @@ footer ul li a {
     margin: 10px 0; /* Adjust margin for smaller screens */
   }
 
-  .right-container, .left-container {
+  .right-container,
+  .left-container {
     width: 100%; /* Make both containers full width */
     margin: 0; /* Remove margin */
   }
+}
+
+/* humberger menu style */
+
+.menu {
+  width: 35px;
+  height: 30px;
+  margin: 30px 0 20px 20px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.bar {
+  height: 6px;
+  width: 100%;
+  background: #3b8ca9;
+  display: block;
+  border-radius: 3px;
+  transition: 0.3s ease;
 }

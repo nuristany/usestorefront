@@ -166,7 +166,7 @@ function RegistrationForm() {
   return (
     <div className="registration-container">
       <div className="wrapper">
-        <h1>Registration</h1>
+        <h4>New To ibuy?</h4>
         <form onSubmit={handleSubmit}>
           {error && <div className="error">{error}</div>}
           <div className="input-box">

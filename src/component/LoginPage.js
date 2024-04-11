@@ -17,10 +17,13 @@ const Login = () => {
 
     setLoading(true);
     try {
-      const res = await axios.post("https://web-production-036f.up.railway.app/auth/jwt/create/", {
-        username,
-        password,
-      });
+      const res = await axios.post(
+        "https://web-production-036f.up.railway.app/auth/jwt/create/",
+        {
+          username,
+          password,
+        }
+      );
 
       const response = res.data;
       localStorage.setItem("access", response.access);
@@ -50,10 +53,12 @@ const Login = () => {
             {loading ? "Logging in..." : "Login"}
           </button>
           <div className="login-link">
-            <p>
-              Don't have an account? <Link to="/register">Create one</Link>
-            </p>
-            <hr />
+            <div className="login-link-p">
+              <p>Don't have an account ?</p>
+              <div className="login-link-create">
+                <Link to="/register">Create one</Link>
+              </div>
+            </div>
           </div>
         </form>
       </div>
@@ -62,7 +67,6 @@ const Login = () => {
 };
 
 export default Login;
-
 
 // import React, { useState } from "react";
 // import axios from "axios";

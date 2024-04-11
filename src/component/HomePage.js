@@ -45,19 +45,21 @@ export default function Home() {
           <div className="container">
             {error && <p className="error-message">{error}</p>}
             {items.map((item) => (
-              <div className="card-container" key={item.id}>
-                <div className="card">
-                  <img src={item.images[0].image} alt="placeholder" />
-                  <div className="card-content">
-                    <h5>{item.title}</h5>
-                  </div>
-                  <div className="buy-button">
+  <div className="card-container" key={item.id}>
+    <div className="card">
+      {item.images && item.images[0] && (
+        <img src={item.images[0]?.image} alt="placeholder" />
+      )}
+      <div className="card-content">
+        <h5>{item.title}</h5>
+      </div>
+      <div className="buy-button">
+        <button onClick={() => handleBuyClick(item.id)}>Click to Buy</button>
+      </div>
+    </div>
+  </div>
+))}
 
-                  <button onClick={() =>handleBuyClick(item.id)}>Click to Buy</button>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
@@ -65,6 +67,11 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+
+
 
 
 // import React, { useState, useEffect } from "react";
