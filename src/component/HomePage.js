@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import CategoryPage from "./CategoryPage";
+import HamburgerMenu from "./HumbergerMenu";
 import axios from "axios";
 import { useNavigate} from "react-router-dom";
 import Footer from "../Footer";
@@ -38,7 +39,7 @@ export default function Home() {
   return (
     <div className="row">
       <div className="col-2">
-        <CategoryPage />
+        <HamburgerMenu />
       </div>
       <div className="col">
         <div className="main">
