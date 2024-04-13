@@ -1,7 +1,6 @@
 // Home.js
 
 import React, { useState, useEffect } from "react";
-import CategoryPage from "./CategoryPage";
 import HamburgerMenu from "./HumbergerMenu";
 import axios from "axios";
 import { useNavigate} from "react-router-dom";
