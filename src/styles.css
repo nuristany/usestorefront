@@ -435,7 +435,7 @@ footer ul li a {
 }
 
 .create-form {
-  width: 50%;
+  width: 70%;
   margin-top: 20px;
   margin-bottom: 30px;
   background:white;
@@ -478,6 +478,18 @@ footer ul li a {
 
 .create-form button:hover {
   background-color: #043033;
+}
+
+
+@media only screen and(max-width:600px){
+.create-form{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background:white;
+  padding: 20px;
+  border-radius: 5px;
+}
 }
 
 /* Existing styles here */
