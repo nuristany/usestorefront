@@ -5,6 +5,7 @@ import RegistrationForm from "./component/RegistrationPage";
 import Login from "./component/LoginPage";
 import Logout from "./component/LogoutPage";
 import { AuthProvider } from "./AuthContext";
+import EditItem from "./component/EditItem";
 import Layout from "./Layout";
 
 // import "./App.css";
@@ -29,6 +30,8 @@ function App() {
             <Route path="/category-items/:categoryId" element={<CategoryItems />} /> {/* Add this route */}
             <Route path="/item-details/:itemId" element={<ItemDetailPage />} /> {/* Add this route */}
             <Route path="/humberger" element={<HumbergerMenu />} /> {/* Add this route */}
+            <Route path="/edit-item/:itemId" element={<EditItem />} /> {/* Add this route */}
+
             
           </Route>
         </Routes>
