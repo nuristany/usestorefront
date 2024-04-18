@@ -904,8 +904,17 @@ footer ul li a {
   padding: 5px;
 }
 
+.edit-form-button{
+  margin-top: 2px;
+}
+.edit-form-button button{
+  height: 40px;
+  width: 10rem;
+}
+
 .edit-form-button .btn-delete {
   background: red;
+  margin-left: 2px;
 }
 .btn-update-item{
   margin-left: 8rem;
