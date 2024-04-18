@@ -1,5 +1,3 @@
-
-
 // import React, { useState, useEffect } from "react";
 // import { useParams } from "react-router-dom";
 // import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
@@ -81,7 +79,7 @@
 //               <button
 //               key={index}
 //               className={
-                 
+
 //                   currentSlide === index
 //                     ? "current-indicator"
 //                     : "current-indicator inactive-indicator"
@@ -114,7 +112,6 @@
 
 // export default ItemDetailPage;
 
-
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
@@ -139,7 +136,7 @@ const ItemDetailPage = () => {
             },
           }
         );
-        
+
         setItem(response.data);
       } catch (error) {
         setError("Failed to fetch item");
@@ -205,7 +202,14 @@ const ItemDetailPage = () => {
             ))}
           </span>
         </div>
-        <button className="btn-edit-item" onClick={() => handleEditClick(item.id)}>Update</button>
+        <div className="btn-update-container">
+          <button
+            className="btn-update-item"
+            onClick={() => handleEditClick(item.id)}
+          >
+            Update
+          </button>
+        </div>
       </div>
       <div className="left-container">
         {item && (
@@ -227,5 +231,3 @@ const ItemDetailPage = () => {
 };
 
 export default ItemDetailPage;
-
-
