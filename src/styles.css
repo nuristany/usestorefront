@@ -938,4 +938,16 @@ footer ul li a {
 }
 
 
+@media screen and (max-width: 756px){
+  .edit-form-button button{
+    height: 40px;
+    width: 10rem;
+    margin-top: 2px;
+  }
+  .edit-form-button .btn-delete{
+    margin-left: 0;
+  }
+}
+
+
 
