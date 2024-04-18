@@ -54,6 +54,7 @@ export default function Home() {
                   )}
                   <div className="card-content">
                     <h5>{item.title}</h5>
+                    <h5>${item.price}</h5>
                   </div>
                   <div className="buy-button">
                     <button onClick={() => handleBuyClick(item.id)}>

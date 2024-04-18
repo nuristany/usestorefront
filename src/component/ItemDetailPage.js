@@ -1,15 +1,17 @@
+
+
 // import React, { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
+// import { useParams, useNavigate } from "react-router-dom";
 // import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
-// import { useNavigate } from "react-router-dom";
 // import axios from "axios";
 
 // const ItemDetailPage = () => {
 //   const { itemId } = useParams();
 //   const [currentSlide, setCurrentSlide] = useState(0);
 //   const [item, setItem] = useState(null);
-//   const [error, setError] = useState(null); // Include error state
+//   const [error, setError] = useState(null);
 //   const navigate = useNavigate();
+
 //   useEffect(() => {
 //     const fetchItem = async () => {
 //       try {
@@ -22,7 +24,7 @@
 //             },
 //           }
 //         );
-//         console.log(response.data);
+
 //         setItem(response.data);
 //       } catch (error) {
 //         setError("Failed to fetch item");
@@ -45,13 +47,13 @@
 //     );
 //   }
 
-//   function handleEditClick(itemId){
-//     navigate(`"/edit-item"/${itemId}`)
+//   function handleEditClick(itemId) {
+//     navigate(`/edit-item/${itemId}`); // Navigate to the edit page with item ID
 //   }
 
 //   return (
 //     <div className="item-detail-container">
-//       {error && <div>Error: {error}</div>} {/* Render error message if error exists */}
+//       {error && <div>Error: {error}</div>}
 //       <div className="right-container">
 //         <div className="slider-container">
 //           <BsArrowLeftCircleFill
@@ -73,13 +75,12 @@
 //           <BsArrowRightCircleFill
 //             onClick={handleNext}
 //             className="arrow arrow-right"
-//             />
+//           />
 //           <span className="circle-indicators">
 //             {item?.images?.map((_, index) => (
 //               <button
-//               key={index}
-//               className={
-
+//                 key={index}
+//                 className={
 //                   currentSlide === index
 //                     ? "current-indicator"
 //                     : "current-indicator inactive-indicator"
@@ -89,7 +90,14 @@
 //             ))}
 //           </span>
 //         </div>
-//              <button onClick={()=>handleEditClick(item.id)}>Edit Item</button>
+//         <div className="btn-update-container">
+//           <button
+//             className="btn-update-item"
+//             onClick={() => handleEditClick(item.id)}
+//           >
+//             Update
+//           </button>
+//         </div>
 //       </div>
 //       <div className="left-container">
 //         {item && (
@@ -112,6 +120,8 @@
 
 // export default ItemDetailPage;
 
+
+
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
@@ -122,12 +132,14 @@ const ItemDetailPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [item, setItem] = useState(null);
   const [error, setError] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null); // State to store current user data
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchItem = async () => {
       try {
         const accessToken = localStorage.getItem("access");
+        // Fetch item details
         const response = await axios.get(
           `https://web-production-036f.up.railway.app/store/items/${itemId}`,
           {
@@ -138,6 +150,17 @@ const ItemDetailPage = () => {
         );
 
         setItem(response.data);
+
+        // Fetch current user data
+        const userResponse = await axios.get(
+          "https://web-production-036f.up.railway.app/auth/users/me",
+          {
+            headers: {
+              Authorization: `JWT ${accessToken}`,
+            },
+          }
+        );
+        setCurrentUser(userResponse.data);
       } catch (error) {
         setError("Failed to fetch item");
         console.error("Error fetching item:", error.message);
@@ -203,12 +226,15 @@ const ItemDetailPage = () => {
           </span>
         </div>
         <div className="btn-update-container">
-          <button
-            className="btn-update-item"
-            onClick={() => handleEditClick(item.id)}
-          >
-            Update
-          </button>
+          {/* Conditionally render the update button based on user's role */}
+          {currentUser && currentUser.id === item?.seller && (
+            <button
+              className="btn-update-item"
+              onClick={() => handleEditClick(item.id)}
+            >
+              Update
+            </button>
+          )}
         </div>
       </div>
       <div className="left-container">
@@ -231,3 +257,4 @@ const ItemDetailPage = () => {
 };
 
 export default ItemDetailPage;
+
