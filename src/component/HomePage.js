@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import HamburgerMenu from "./HumbergerMenu";
 import axios from "axios";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Footer from "../Footer";
 export default function Home() {
   const [items, setItems] = useState([]);
@@ -14,12 +14,15 @@ export default function Home() {
     const fetchItems = async () => {
       try {
         const accessToken = localStorage.getItem("access");
-        const response = await axios.get("https://web-production-036f.up.railway.app/store/items/", {
-          headers: {
-            Authorization: `JWT ${accessToken}`,
-          },
-        });
-        console.log("Data:", response.data)
+        const response = await axios.get(
+          "https://web-production-036f.up.railway.app/store/items/",
+          {
+            headers: {
+              Authorization: `JWT ${accessToken}`,
+            },
+          }
+        );
+        console.log("Data:", response.data);
         setItems(response.data);
         //console.log("Data:", response.data)
       } catch (error) {
@@ -28,10 +31,9 @@ export default function Home() {
       }
     };
 
-    
     fetchItems(); // Call fetchItems when the component mounts
   }, []); // Empty dependency array ensures this effect runs only once after initial render
-  
+
   const handleBuyClick = (itemId) => {
     navigate(`/item-details/${itemId}`);
   };
@@ -45,21 +47,22 @@ export default function Home() {
           <div className="container">
             {error && <p className="error-message">{error}</p>}
             {items.map((item) => (
-  <div className="card-container" key={item.id}>
-    <div className="card">
-      {item.images && item.images[0] && (
-        <img src={item.images[0]?.image} alt="placeholder" />
-      )}
-      <div className="card-content">
-        <h5>{item.title}</h5>
-      </div>
-      <div className="buy-button">
-        <button onClick={() => handleBuyClick(item.id)}>Click to Buy</button>
-      </div>
-    </div>
-  </div>
-))}
-
+              <div className="card-container" key={item.id}>
+                <div className="card">
+                  {item.images && item.images[0] && (
+                    <img src={item.images[0]?.image} alt="placeholder" />
+                  )}
+                  <div className="card-content">
+                    <h5>{item.title}</h5>
+                  </div>
+                  <div className="buy-button">
+                    <button onClick={() => handleBuyClick(item.id)}>
+                      Click to Buy
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -67,12 +70,6 @@ export default function Home() {
     </div>
   );
 }
-
-
-
-
-
-
 
 // import React, { useState, useEffect } from "react";
 // import CategoryPage from "./CategoryPage";
@@ -102,10 +99,9 @@ export default function Home() {
 //       }
 //     };
 
-    
 //     fetchItems(); // Call fetchItems when the component mounts
 //   }, []); // Empty dependency array ensures this effect runs only once after initial render
-  
+
 //   const handleBuyClick = (itemId) => {
 //     navigate(`/item-details/${itemId}`);
 //   };
@@ -139,6 +135,3 @@ export default function Home() {
 //     </div>
 //   );
 // }
-
-
-

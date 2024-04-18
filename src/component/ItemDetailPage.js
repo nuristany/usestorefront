@@ -205,7 +205,7 @@ const ItemDetailPage = () => {
             ))}
           </span>
         </div>
-        <button onClick={() => handleEditClick(item.id)}>Edit Item</button>
+        <button className="btn-edit-item" onClick={() => handleEditClick(item.id)}>Update</button>
       </div>
       <div className="left-container">
         {item && (

@@ -288,7 +288,7 @@ form button {
 .logout {
   height: 50vh;
   width: 50vh;
-  background:white;
+  background: white;
   margin-top: 20px;
   border-radius: 5px;
   padding-top: 10px;
@@ -296,7 +296,7 @@ form button {
 }
 .logout p {
   font-size: 20px;
-  color:black;
+  color: black;
 }
 .logout button {
   margin-top: 20px;
@@ -348,7 +348,7 @@ form button {
 }
 
 .list-group a {
-  color:#085dce;
+  color: #085dce;
 }
 
 footer {
@@ -438,17 +438,16 @@ footer ul li a {
   width: 70%;
   margin-top: 20px;
   margin-bottom: 30px;
-  background:white;
+  background: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  
 }
 
 .create-form label {
   display: block;
   margin-bottom: 5px;
-  color:black;
+  color: black;
 }
 
 .create-form input[type="text"],
@@ -468,7 +467,7 @@ footer ul li a {
 }
 
 .create-form button {
-  background-color:#085dce;
+  background-color: #085dce;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -480,27 +479,26 @@ footer ul li a {
   background-color: #043033;
 }
 
+@media only screen and(max-width:600px) {
+  .create-form {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
 
-@media only screen and(max-width:600px){
-.create-form{
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  background:white;
-  padding: 20px;
-  border-radius: 5px;
-}
-
-.create-form input[type="text"],
-.create-form textarea,
-.create-form select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
+  .create-form input[type="text"],
+  .create-form textarea,
+  .create-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
 }
 
 /* Existing styles here */
@@ -797,9 +795,6 @@ footer ul li a {
   z-index: 100;
 }
 
-
-
-
 .nav li {
   border-radius: 5px;
   width: 60%;
@@ -812,9 +807,8 @@ footer ul li a {
   border: 1px solid #92b4e1;
   margin-bottom: 1px;
 }
-.collection{
+.collection {
   margin-left: 15px;
-
 }
 
 .icon .bar {
@@ -843,7 +837,6 @@ footer ul li a {
   border-radius: 5px;
   transition: 0.3s ease;
   background-color: #043033;
-  
 }
 
 #menu #bar1 {
@@ -860,10 +853,7 @@ footer ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-
-
 
 .nav {
   padding: 0;
@@ -906,7 +896,6 @@ footer ul li a {
   /* Adjust menu styles for large screens */
 }
 
-
 .nav li a:hover {
   color: #000000;
   background-color: #eae4e4;
@@ -914,9 +903,21 @@ footer ul li a {
   padding: 5px;
 }
 
+.edit-form-button button {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+.edit-form-button .btn-delete {
+  background: red;
+}
+.btn-edit-item{
+  margin-left: 8rem;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 150px 10px 150px;
+  border-radius: 5px;
+  font-size: 16px;
 
-
-
-
-
-
+  
+}

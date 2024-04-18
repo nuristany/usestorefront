@@ -10,6 +10,7 @@ const EditItem = () => {
     description: "",
     condition: "",
     category: "",
+    image: null,
   });
   const [error, setError] = useState(null); // Add error state
 
@@ -59,6 +60,51 @@ const EditItem = () => {
     }
   };
 
+  const handleImageChange = async (e) => {
+    const file = e.target.files[0];
+    setItemData({ ...itemData, image: file });
+
+    const accessToken = localStorage.getItem("access");
+
+    try {
+      // Check if the item already has an image
+      if (itemData.images && itemData.images.length > 0) {
+        // Extract the image ID from the item's image URL
+        const imageId = itemData.images[0].id;
+
+        // If it does, delete the existing image
+        await axios.delete(
+          `https://web-production-036f.up.railway.app/store/items/${itemId}/images/${imageId}`,
+          {
+            headers: {
+              Authorization: `JWT ${accessToken}`,
+            },
+          }
+        );
+      }
+
+      // Prepare the form data for image upload
+      const formDataForUpload = new FormData();
+      formDataForUpload.append("image", file);
+
+      // Upload the new image for the item
+      const imageResponse = await axios.post(
+        `https://web-production-036f.up.railway.app/store/items/${itemId}/images/`,
+        formDataForUpload,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `JWT ${accessToken}`,
+          },
+        }
+      );
+
+      console.log("Image posted successfully:", imageResponse.data);
+    } catch (error) {
+      console.error("Error uploading image:", error);
+    }
+  };
+
   const handleDelete = async () => {
     try {
       const accessToken = localStorage.getItem("access");
@@ -77,46 +123,54 @@ const EditItem = () => {
   };
 
   return (
-    <div>
-      {error && <div>Error: {error}</div>}{" "}
-      {/* Render error message if error exists */}
-      <h2>Edit Item</h2>
-      <label>Title:</label>
-      <input
-        type="text"
-        name="title"
-        value={itemData.title}
-        onChange={handleInputChange}
-      />
-      <label>Price:</label>
-      <input
-        type="text"
-        name="price"
-        value={itemData.price}
-        onChange={handleInputChange}
-      />
-      <label>Description:</label>
-      <textarea
-        name="description"
-        value={itemData.description}
-        onChange={handleInputChange}
-      />
-      <label>Condition:</label>
-      <input
-        type="text"
-        name="condition"
-        value={itemData.condition}
-        onChange={handleInputChange}
-      />
-      <label>Category:</label>
-      <input
-        type="text"
-        name="category"
-        value={itemData.category}
-        onChange={handleInputChange}
-      />
-      <button onClick={handleEdit}>Save Changes</button>
-      <button onClick={handleDelete}>Delete Item</button>
+    <div className="add-item-container">
+      <div className="create-form">
+        {error && <div>Error: {error}</div>}{" "}
+        {/* Render error message if error exists */}
+        <h2>Edit Item</h2>
+        <label>Title:</label>
+        <input
+          type="text"
+          name="title"
+          value={itemData.title}
+          onChange={handleInputChange}
+        />
+        <label>Price:</label>
+        <input
+          type="text"
+          name="price"
+          value={itemData.price}
+          onChange={handleInputChange}
+        />
+        <label>Description:</label>
+        <textarea
+          name="description"
+          value={itemData.description}
+          onChange={handleInputChange}
+        />
+        <label>Condition:</label>
+        <input
+          type="text"
+          name="condition"
+          value={itemData.condition}
+          onChange={handleInputChange}
+        />
+        <label>Category:</label>
+        <input
+          type="text"
+          name="category"
+          value={itemData.category}
+          onChange={handleInputChange}
+        />
+        <div>
+          <label>Image:</label>
+          <input type="file" name="image" onChange={handleImageChange} />
+        </div>
+        <div className="edit-form-button">
+          <button onClick={handleEdit}>Save Changes</button>
+          <button className="btn-delete" onClick={handleDelete}>Delete Item</button>
+        </div>
+      </div>
     </div>
   );
 };
