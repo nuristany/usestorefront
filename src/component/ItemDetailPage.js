@@ -241,7 +241,7 @@ const ItemDetailPage = () => {
         {item && (
           <div className="item-detail">
             <h1 className="item-title">{item.title}</h1>
-            <h4>Price: {item.price}</h4>
+            <h4>Price: ${item.price}</h4>
             <h4>Contact: {item.phone}</h4>
             <h4>Seller: {item.seller_full_name}</h4>
             <br />

@@ -949,5 +949,18 @@ footer ul li a {
   }
 }
 
+ /* Rating Component style  */
 
+
+ .star {
+  margin-top: 1px;
+}
+
+.active {
+  color: gold;
+}
+
+.inactive {
+  color: #bacdd8;
+}
 

@@ -5,6 +5,7 @@ import HamburgerMenu from "./HumbergerMenu";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer";
+import Rating from "./Rating";
 export default function Home() {
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
@@ -53,7 +54,8 @@ export default function Home() {
                     <img src={item.images[0]?.image} alt="placeholder" />
                   )}
                   <div className="card-content">
-                    <h5>{item.title}</h5>
+                    < Rating />
+                    <p>{item.title}</p>
                     <h5>${item.price}</h5>
                   </div>
                   <div className="buy-button">
