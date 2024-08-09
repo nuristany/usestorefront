@@ -144,7 +144,7 @@ function RegistrationForm() {
 
     try {
       //const accessToken = localStorage.getItem("access");
-      const response = await fetch("https://web-production-036f.up.railway.app/auth/users/", {
+      const response = await fetch("https://django-rail-production-f714.up.railway.app/auth/users/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
