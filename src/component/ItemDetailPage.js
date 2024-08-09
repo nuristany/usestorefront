@@ -141,7 +141,7 @@ const ItemDetailPage = () => {
         const accessToken = localStorage.getItem("access");
         // Fetch item details
         const response = await axios.get(
-          `https://web-production-036f.up.railway.app/store/items/${itemId}`,
+          `https://django-rail-production-f714.up.railway.app/store/items/${itemId}`,
           {
             headers: {
               Authorization: `JWT ${accessToken}`,
@@ -153,7 +153,7 @@ const ItemDetailPage = () => {
 
         // Fetch current user data
         const userResponse = await axios.get(
-          "https://web-production-036f.up.railway.app/auth/users/me",
+          "https://django-rail-production-f714.up.railway.app/auth/users/me",
           {
             headers: {
               Authorization: `JWT ${accessToken}`,
