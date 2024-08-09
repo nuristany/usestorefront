@@ -14,7 +14,7 @@ const CategoryItems = () => {
       try {
         const accessToken = localStorage.getItem("access");
         const response = await axios.get(
-          `https://web-production-036f.up.railway.app/store/items/?category_id=${categoryId}`, // Use categoryId from URL params
+          `https://django-rail-production-f714.up.railway.app/store/items/?category_id=${categoryId}`, // Use categoryId from URL params
           {
             headers: {
               Authorization: `JWT ${accessToken}`,
