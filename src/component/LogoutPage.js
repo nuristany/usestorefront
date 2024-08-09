@@ -17,7 +17,7 @@ const Logout = () => {
     console.log(localStorage)
     console.log("local:",localStorage)
     // Redirect the user to the login page
-    navigate("/login");
+    navigate("/home");
   };
 
   return (

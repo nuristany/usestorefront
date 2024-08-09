@@ -18,7 +18,7 @@ const Login = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "https://web-production-036f.up.railway.app/auth/jwt/create/",
+        "https://django-rail-production-f714.up.railway.app/auth/jwt/create/",
         {
           username,
           password,
