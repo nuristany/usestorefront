@@ -16,7 +16,7 @@ export default function Home() {
       try {
         const accessToken = localStorage.getItem("access");
         const response = await axios.get(
-          "https://web-production-036f.up.railway.app/store/items/",
+          "https://django-rail-production-f714.up.railway.app/store/items/",
           {
             headers: {
               Authorization: `JWT ${accessToken}`,
