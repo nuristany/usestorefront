@@ -19,7 +19,7 @@ const EditItem = () => {
       try {
         const accessToken = localStorage.getItem("access");
         const response = await axios.get(
-          `https://web-production-036f.up.railway.app/store/items/${itemId}/`,
+          `https://django-rail-production-f714.up.railway.app/store/items/${itemId}/`,
           {
             headers: {
               Authorization: `JWT ${accessToken}`,
@@ -46,7 +46,7 @@ const EditItem = () => {
     const accessToken = localStorage.getItem("access");
     try {
       await axios.put(
-        `https://web-production-036f.up.railway.app/store/items/${itemId}/`,
+        `https://django-rail-production-f714.up.railway.app/store/items/${itemId}/`,
         itemData,
         {
           headers: {
@@ -74,7 +74,7 @@ const EditItem = () => {
 
         // If it does, delete the existing image
         await axios.delete(
-          `https://web-production-036f.up.railway.app/store/items/${itemId}/images/${imageId}`,
+          `https://django-rail-production-f714.up.railway.app/store/items/${itemId}/images/${imageId}`,
           {
             headers: {
               Authorization: `JWT ${accessToken}`,
@@ -89,7 +89,7 @@ const EditItem = () => {
 
       // Upload the new image for the item
       const imageResponse = await axios.post(
-        `https://web-production-036f.up.railway.app/store/items/${itemId}/images/`,
+        `https://django-rail-production-f714.up.railway.app/store/items/${itemId}/images/`,
         formDataForUpload,
         {
           headers: {
@@ -109,7 +109,7 @@ const EditItem = () => {
     try {
       const accessToken = localStorage.getItem("access");
       await axios.delete(
-        `https://web-production-036f.up.railway.app/store/items/${itemId}/`,
+        `https://django-rail-production-f714.up.railway.app/store/items/${itemId}/`,
         {
           headers: {
             Authorization: `JWT ${accessToken}`,
