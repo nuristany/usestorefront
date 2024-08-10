@@ -23,7 +23,7 @@ function CreateItemPage() {
       try {
         const accessToken = localStorage.getItem("access");
         const response = await axios.get(
-          "https://web-production-036f.up.railway.app/store/category/",{
+          "https://django-rail-production-f714.up.railway.app/store/category/",{
 
             headers: {
               Authorization: `JWT ${accessToken}`,
@@ -55,7 +55,7 @@ function CreateItemPage() {
     const accessToken = localStorage.getItem("access");
     try {
       // Fetch the authenticated user's data to get the user ID (seller ID)
-      const response = await axios.get("https://web-production-036f.up.railway.app/auth/users/me", {
+      const response = await axios.get("https://django-rail-production-f714.up.app/auth/users/me", {
         headers: {
           Authorization: `JWT ${accessToken}`,
         },
@@ -74,7 +74,7 @@ function CreateItemPage() {
   
       // Create the item
       const itemResponse = await axios.post(
-        "https://web-production-036f.up.railway.app/store/items/",
+        "https://django-rail-production-f714.up.railway.app/store/items/",
         itemData,
         {
           headers: {
@@ -91,7 +91,7 @@ function CreateItemPage() {
   
       // Upload the image for the item
       const imageResponse = await axios.post(
-        `https://web-production-036f.up.railway.app/store/items/${itemId}/images/`,
+        `https://django-rail-production-f714.up.railway.app/store/items/${itemId}/images/`,
         formDataForUpload,
         {
           headers: {
