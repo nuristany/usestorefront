@@ -11,7 +11,7 @@ const HamburgerMenu = () => {
       try {
         const accessToken = localStorage.getItem("access");
         const response = await axios.get(
-          "https://web-production-036f.up.railway.app/store/category/",
+          "https://django-rail-production-f714.up.railway.app/store/category/",
           {
             headers: {
               Authorization: `JWT ${accessToken}`,
