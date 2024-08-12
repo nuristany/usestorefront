@@ -1,5 +1,3 @@
-
-
 // import React, { useState, useEffect } from "react";
 // import axios from "axios";
 // import { Link, useNavigate } from "react-router-dom";
@@ -50,7 +48,7 @@
 //     try {
 //       const accessToken = localStorage.getItem("access");
 //       const response = await axios.get(
-//         `https://web-production-036f.up.railway.app/store/items/?category_id=${categoryId}`,
+//         `${categoryId}`,
 //         {
 //           headers: {
 //             Authorization: `JWT ${accessToken}`,
@@ -81,15 +79,12 @@
 //           </Link>
 //         ))}
 //       </ul>
-     
+
 //     </div>
 //   );
 // };
 
 // export default CategoryPage;
-
-
-
 
 // import React, { useState, useEffect } from "react";
 // import axios from "axios";
@@ -172,7 +167,7 @@
 //           </Link>
 //         ))}
 //       </ul>
-     
+
 //     </div>
 //   );
 // };

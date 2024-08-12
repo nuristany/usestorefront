@@ -24,7 +24,7 @@ const HamburgerMenu = () => {
         const categoriesWithItemCount = await Promise.all(
           response.data.map(async (category) => {
             const itemsResponse = await axios.get(
-              `https://web-production-036f.up.railway.app/store/items/?category_id=${category.id}`,
+              `https://django-rail-production-f714.up.railway.app/store/items/?category_id=${category.id}`,
               {
                 headers: {
                   Authorization: `JWT ${accessToken}`,
@@ -89,7 +89,7 @@ const HamburgerMenu = () => {
         {categories.map((category) => (
           <Link key={category.id} onClick={() => handleCategoryClick(category.id)}>
             <li>
-              {category.name} ({category.itemCount})
+              {category.name}
             </li>
           </Link>
         ))}
